@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+package AvoreAVL;
 
 public class AVLNo {
-
     int info;
     int alt;
     AVLNo noDireita;
@@ -14,7 +13,7 @@ public class AVLNo {
         this.noEsquerda = null;
     }
 
-    public AVLNo(int[] vetor, String nome) {
+    public AVLNo(int[] vetor) {
         for (int i = 0; i < vetor.length; i++) {
             inserir(this, vetor[i]);
         }
@@ -98,7 +97,7 @@ public class AVLNo {
         } else { //Atual recebe o conteudo da raiz
             if (valor < atual.info) { //Valor que o campo de informação do nó atual
                 atual.noEsquerda = inserir(atual.noEsquerda, valor); //inserção na asa da esquerda
-                if (getFatorBalanceamento(atual) >= 2) { //Se a inserção for maior ou igual a 2, é necessário balancear
+                if (getFatorBalanceamento(atual) == 2) { //Se a inserção for maior ou igual a 2, é necessário balancear
                     if (valor < atual.noEsquerda.info) {//Se o valor é menor do que o conteudo do nó da esquerda atual
                         atual = rotacaoLL(atual);
                     } else {
@@ -107,15 +106,13 @@ public class AVLNo {
                 }
             } else if (valor > atual.info) {
                 atual.noDireita = inserir(atual.noDireita, valor);//inserção na asa da direita
-                if (getFatorBalanceamento(atual) >= 2) {//Se a inserção for maior ou igual a 2, é necessário balancear
+                if (getFatorBalanceamento(atual) == 2) {//Se a inserção for maior ou igual a 2, é necessário balancear
                     if (valor > atual.noDireita.info) {//Se o valor é maior do que o conteudo do nó da direita atual
                         atual = rotacaoRR(atual);
                     } else {
                         atual = rotacaoRL(atual);
                     }
                 }
-            } else {//Valores iguais
-                System.out.println("Valor duplicado!");
             }
         }
         atual.alt = getMax(getAltura(atual.noEsquerda), getAltura(atual.noDireita)) + 1; //Recalcula a altura atual
