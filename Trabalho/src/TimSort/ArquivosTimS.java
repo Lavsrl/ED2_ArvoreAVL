@@ -83,7 +83,7 @@ public class ArquivosTimS {
         int min = (int) Math.floor((segundos % 3600) / 60);
         int seg = (int) Math.floor((segundos % 60));
 
-        String tempo = String.format( "%02d:%02d:%02d:%03d", hr, min, seg, (int) miliSeg);
+        String tempo = String.format( "%02d:%02d:%02d:%03d", hr, min, seg);
 
         String cabecalho = "Tempo de execução: "+ tempo + "\nQuantidade de Comparações: " + qtdComp + "\nQuantidade de Movimentos: " + qtdMov + "\n\n";
 

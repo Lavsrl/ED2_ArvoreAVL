@@ -5,20 +5,24 @@ public class Main {
 
         int[] vetor = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados5.txt");
         int[] vetor1 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados100.txt");
-        int[] vetor2 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados100_mil.txt");
-        int[] vetor3 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados500_mil.txt");
+        int[] vetor2 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados1000.txt");
+        int[] vetor3 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados10_mil.txt");
+        int[] vetor4 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados50_mil.txt");
+        int[] vetor5 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados100_mil.txt");
+        int[] vetor6 = Arquivos.lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados500_mil.txt");
 
         AVLNo arvore = new AVLNo(vetor.clone());
         AVLNo arvore1 = new AVLNo(vetor1.clone());
         AVLNo arvore2 = new AVLNo(vetor2.clone());
         AVLNo arvore3 = new AVLNo(vetor3.clone());
+        AVLNo arvore4 = new AVLNo(vetor4.clone());
+        AVLNo arvore5 = new AVLNo(vetor5.clone());
+        AVLNo arvore6 = new AVLNo(vetor6.clone());
 
         double tempoInicial = System.currentTimeMillis();
-        for (int value : vetor) {//Inserindo os valores do vetor na árvore
-            arvore2.inserir(arvore2, value);
-        }
-        System.out.println("Impressão em ordem dos 100 mil dados: ");
-        AVLNo.imp_Ordem(arvore2);
+
+        System.out.println("Impressão em ordem dos dados: ");
+        AVLNo.imp_Ordem(arvore5);
 
         double tempoFinal = System.currentTimeMillis();
         double tempoTotal = tempoFinal - tempoInicial;

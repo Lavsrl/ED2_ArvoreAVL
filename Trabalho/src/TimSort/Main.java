@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
     int[] vetor = ArquivosTimS
             .lerArquivo("L:\\Trabalho\\Trabalho\\src\\ArquivoDados\\dados100_mil.txt");
+
     ts = new TimSort(vetor);
 
 }
